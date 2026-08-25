@@ -79,7 +79,7 @@ class MonitorService : Service() {
         override fun onReceive(context: Context?, intent: Intent?) {
             val state = intent?.getStringExtra(TelephonyManager.EXTRA_STATE)
             if (state == TelephonyManager.EXTRA_STATE_RINGING) {
-                val incomingNumber = intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER)
+                val incomingNumber = intent?.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER)
                 handleIncomingCall(incomingNumber)
             }
         }
